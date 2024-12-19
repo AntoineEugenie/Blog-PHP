@@ -1,4 +1,12 @@
 <?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
+$cookieName = $_SESSION['username'];
+setcookie($cookieName);
+
 include 'connectToDB.php';
 
 if ($con->connect_error) {
