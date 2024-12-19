@@ -1,9 +1,15 @@
 <?php
     require('connectToDB.php');
+    session_start();
+    $username = $_SESSION['username'];
+    if (!isset($username)) {
+        header("Location: login.php");
+        exit();
+    }
     $postId = $_GET['id'];
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $nom = $_POST['comment'];
-        $comment = afficherMessage($comment);
+        $comment = $_POST['comment'];
+        postComment($comment);
     }
 
 function afficherPost(){
@@ -24,6 +30,7 @@ function afficherPost(){
 function afficherComments(){
     global $con;
     global $postId;
+    
     $stmt = $con->prepare('SELECT * FROM comments WHERE ID_Post= (?)');
     $stmt->execute([$postId]);
     $result = $stmt->get_result();
@@ -37,7 +44,13 @@ function afficherComments(){
    
 }
 
-function postComment(){}
+function postComment(string $comment){
+    global $con;
+    global $postId;
+    global $username;
+    $stmt = $con->prepare('INSERT INTO `comments` (`ID_Post`, `Content`, `Author`) VALUES (?, ?, ?);');
+    $stmt->execute([$postId,$comment,$username]);
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -48,7 +61,7 @@ function postComment(){}
 </head>
 <body>
     <div>
-        <a href="/.."> Accueil </a>  
+        <a href="./index.php"> Accueil </a>  
         <a href="/admin"> Administration</a>
     </div>
         <?php afficherPost(); ?>
@@ -56,7 +69,7 @@ function postComment(){}
         <?php afficherComments() ?>
     
     </div>
-    <form action="" method="get" class="form-comments">
+    <form action="" method="post" class="form-comments">
         <div class="form-comments">
             <label for="new-comment">Répondre : </label>
             <input type="text" name="comment" id="comment" required />
