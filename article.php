@@ -21,17 +21,24 @@
             <option value="lieux">Lieux</option>
         </select><br><br>
         <input type="submit" value="Soumettre">
+        <button type="button" onclick="window.location.href='index.php'">Annuler</button>
     </form>
 
     <?php
     // Inclure le fichier de connexion
+    session_start();
+    if (!isset($_SESSION['username'])) {
+        header("Location: login.php");
+        exit();
+    }
+
     include 'connectToDB.php';
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $title = htmlspecialchars(trim($_POST['title']));
         $content = htmlspecialchars(trim($_POST['content']));
         $category = htmlspecialchars(trim($_POST['category']));
-        $author = 'Author Name'; // Remplacez par une logique d'auteur réelle si nécessaire
+        $author = $_SESSION["username"]; // Remplacez par une logique d'auteur réelle si nécessaire
         $date = date('Y-m-d H:i:s');
 
         // Préparation de la requête
@@ -43,6 +50,8 @@
 
             if ($stmt->execute()) {
                 echo "Nouvel article créé avec succès.";
+                header("Location: index.php");
+                exit();
             } else {
                 echo "Erreur lors de l'insertion : " . $stmt->error;
             }
