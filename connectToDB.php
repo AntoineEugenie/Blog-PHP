@@ -1,4 +1,5 @@
 <?php
+//global $con;
 $con = mysqli_connect("localhost", "root", "", "blogdb");
 
 #exemple d'utilisation en dessous
