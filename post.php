@@ -23,7 +23,7 @@ function afficherPost(){
         <div class='post'>
             <h2> $row[Title] </h2>
             <div class='content'>  $row[Content] </div>
-            <div> Rédigé par $row[Author] le  ... à ...  </div>
+            <div> Rédigé par $row[Author] le  $row[Date] à ...  </div>
         </div>");
     }
 }
@@ -58,6 +58,7 @@ function postComment(string $comment){
     <meta charset="UTF-8">
     <meta name="Dis des trucs" content="width=device-width, initial-scale=1.0">
     <title>Dis des trucs</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div>

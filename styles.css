@@ -1,0 +1,107 @@
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* En-tête */
+div a {
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+/* Conteneur principal */
+.post {
+    background-color: #fff;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+}
+
+.post h2 {
+    margin-top: 0;
+    color: #444;
+}
+
+.post .content {
+    margin: 15px 0;
+    color: #555;
+    font-size: 1.1em;
+}
+
+/* Section des commentaires */
+.comments-container {
+    background: #fafafa;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 8px;
+    max-width: 800px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comment {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.comment h3 {
+    margin: 0 0 10px 0;
+    color: #007BFF;
+}
+
+.comment .content {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Formulaire des commentaires */
+.form-comments {
+    background: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 800px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-comments textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.form-comments button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.form-comments button:hover {
+    background-color: #0056b3;
+}
