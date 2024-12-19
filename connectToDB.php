@@ -10,3 +10,4 @@ $con = mysqli_connect("localhost", "root", "", "blogdb");
 //while($row = $result->fetch_assoc()) {
 //    echo $row['Username'] . "<br>";
 //}
+
