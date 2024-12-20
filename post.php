@@ -57,7 +57,16 @@ function postComment(string $comment){
 <head>
     <meta charset="UTF-8">
     <meta name="Dis des trucs" content="width=device-width, initial-scale=1.0">
-    <title>Dis des trucs</title>
+    <?php
+        global $con;
+        global $postId;
+        $stmt = $con->prepare('SELECT Title FROM posts WHERE ID= (?)');
+        $stmt->execute([$postId]);
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        $title = $row['Title'];
+    ?>
+    <title>Dis des trucs <?php echo $title; ?></title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>

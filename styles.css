@@ -122,11 +122,11 @@ div a {
 }
 
 .post-preview.lieux {
-    border-left: 10px solid green;
+    border-left: 10px solid d6dc12;
 }
 
 .post-preview.jeux {
-    border-left: 10px solid violet;
+    border-left: 10px solid rgb(132, 15, 221);
 }
 
 button {

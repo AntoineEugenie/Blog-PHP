@@ -32,7 +32,7 @@ $result = $con->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Blog</title>
+    <title>Dis des trucs</title>
 </head>
 <body>
     <h1>Blog Posts</h1>
