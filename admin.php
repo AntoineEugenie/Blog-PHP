@@ -10,15 +10,28 @@
         while($row = $result->fetch_assoc()) {
             echo("
                 <tr>
-                    <td>$row[Title]</td>
-                    <td>$row[Content]</td>
+                <form action=\"editPost.php\" method=\"post\">
+                    <td><input type=\"hidden\" name=\"id\" value=\"$row[ID]\"> </td>
+                    <td><input type=\"text\" name=\"title\" placeholder=\" $row[Title]\" required></td>
+                    <td><textarea name=\"content\" placeholder=\"Nouveau contenu\" required>$row[Content]</textarea></td>
                     <td>$row[Author]</td>
                     <td>$row[Category]</td>
+                    
+                
                     <td>
-                        <form action=\"deletePost.php\" method=\"post\">
-                        <input type=\"hidden\" name=\"id\" value=\"$row[ID]\"> 
-                        <button type=\"submit\">X</button>
+                    
+                        <button type=\"submit\">O</button>
                         </form>
+                        <form action=\"deletePost.php\" method=\"post\">
+                            <input type=\"hidden\" name=\"id\" value=\"$row[ID]\">
+                            <button type=\"submit\">X</button>
+                        </form>
+                        
+                            
+                            
+                            
+                            
+                        
                     </td>
                 </tr>
 
