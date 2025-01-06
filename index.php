@@ -92,11 +92,7 @@ $result = $con->query($sql);
     } else {
         echo "<p>No blog posts found.</p>";
         echo $_SESSION['username'];
-    }
-} else {
-    echo "<p>No blog posts found.</p>";
-    echo $_SESSION['username'];
-}
+        }
 $con->close();
 ?>
 </body>
