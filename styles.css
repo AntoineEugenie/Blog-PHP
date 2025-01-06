@@ -122,7 +122,7 @@ div a {
 }
 
 .post-preview.lieux {
-    border-left: 10px solid d6dc12;
+    border-left: 10px solid #d6dc12;
 }
 
 .post-preview.jeux {
@@ -187,4 +187,32 @@ button.tous:hover {
 .button:disabled {
     background-color: #cccccc;
     cursor: not-allowed;
+}
+
+input[type="submit"] {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+input[type="submit"]:hover {
+    background-color: darkgreen;
+}
+
+button[type="button"] {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+button[type="button"]:hover {
+    background-color: darkred;
 }

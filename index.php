@@ -1,3 +1,32 @@
+/**
+ * Ce fichier est la page d'accueil du blog. Il vérifie si l'utilisateur est connecté,
+ * affiche les articles de blog et permet de filtrer les articles par catégorie.
+ * 
+ * Fonctionnalités principales :
+ * - Vérification de la session utilisateur.
+ * - Redirection vers la page de connexion si l'utilisateur n'est pas connecté.
+ * - Connexion à la base de données.
+ * - Filtrage des articles par catégorie.
+ * - Affichage des articles de blog.
+ * 
+ * Variables :
+ * - $cookieName : Nom du cookie basé sur le nom d'utilisateur de la session.
+ * - $category : Catégorie sélectionnée pour filtrer les articles.
+ * - $categoryFilter : Clause SQL pour filtrer les articles par catégorie.
+ * - $sql : Requête SQL pour récupérer les articles de blog.
+ * - $result : Résultat de la requête SQL.
+ * 
+ * Sections HTML :
+ * - En-tête HTML avec les métadonnées et le lien vers la feuille de style.
+ * - Boutons pour filtrer les articles par catégorie.
+ * - Boucle pour afficher les articles de blog.
+ * - Message si aucun article n'est trouvé.
+ * 
+ * Note :
+ * - Assurez-vous que le fichier 'connectToDB.php' existe et contient les informations de connexion à la base de données.
+ * - Les catégories disponibles sont 'lieux', 'jeux' et 'musique'.
+ * - Les articles sont affichés par ordre décroissant de date.
+ */
 <?php
 session_start();
 if (!isset($_SESSION['username'])) {
