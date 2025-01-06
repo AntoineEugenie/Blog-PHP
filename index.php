@@ -1,4 +1,4 @@
-/**
+<!-- /**
  * Ce fichier est la page d'accueil du blog. Il vérifie si l'utilisateur est connecté,
  * affiche les articles de blog et permet de filtrer les articles par catégorie.
  * 
@@ -26,7 +26,7 @@
  * - Assurez-vous que le fichier 'connectToDB.php' existe et contient les informations de connexion à la base de données.
  * - Les catégories disponibles sont 'lieux', 'jeux' et 'musique'.
  * - Les articles sont affichés par ordre décroissant de date.
- */
+ */ -->
 <?php
 session_start();
 if (!isset($_SESSION['username'])) {
@@ -64,6 +64,7 @@ $result = $con->query($sql);
     <title>Dis des trucs</title>
 </head>
 <body>
+    <a class="logout" href="logout.php"><button style="background-color: red; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 4px; font-size: 1em;">Déconnexion</button></a>
     <h1>Blog Posts</h1>
     <a href="article.php"><button>Ecrire un article</button></a>
     <div>

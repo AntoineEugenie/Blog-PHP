@@ -70,6 +70,7 @@ function postComment(string $comment){
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <a class="logout" href="logout.php"><button style="background-color: red; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 4px; font-size: 1em;">Déconnexion</button></a>
     <div>
         <a href="./index.php"> Accueil </a>  
         <a href="/admin.php"> Administration</a>
