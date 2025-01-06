@@ -6,4 +6,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $con->prepare('DELETE FROM posts WHERE ID= (?)');
     $stmt->execute([$id]);
 }
+header("Location: admin.php");
 ?>

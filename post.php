@@ -74,7 +74,7 @@ function postComment(string $comment){
     <div>
         
         <a href="./index.php"> Accueil </a>  
-        <a href="/admin.php"> Administration</a>
+        <a href="./admin.php"> Administration</a>
     </div>
     <div class='post'>
         <?php afficherPost(); ?>
