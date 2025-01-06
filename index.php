@@ -34,6 +34,12 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 
+if ($_SESSION['role'] == "admin") {
+    $showAdminButton = true;
+}else{
+    $showAdminButton = false;
+}
+
 $cookieName = $_SESSION['username'];
 setcookie($cookieName);
 
@@ -87,7 +93,11 @@ $result = $con->query($sql);
         echo "<p>No blog posts found.</p>";
         echo $_SESSION['username'];
     }
-    $con->close();
-    ?>
+} else {
+    echo "<p>No blog posts found.</p>";
+    echo $_SESSION['username'];
+}
+$con->close();
+?>
 </body>
 </html>
