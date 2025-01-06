@@ -20,11 +20,11 @@ function afficherPost(){
     $result = $stmt->get_result();
     while($row = $result->fetch_assoc()) {
         echo("
-        <div class='post'>
+        
             <h2> $row[Title] </h2>
             <div class='content'>  $row[Content] </div>
             <div> Rédigé par $row[Author] le  $row[Date] à ...  </div>
-        </div>");
+        ");
     }
 }
 function afficherComments(){
@@ -72,21 +72,20 @@ function postComment(string $comment){
 <body>
     <a class="logout" href="logout.php"><button style="background-color: red; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 4px; font-size: 1em;">Déconnexion</button></a>
     <div>
+        
         <a href="./index.php"> Accueil </a>  
         <a href="/admin.php"> Administration</a>
     </div>
+    <div class='post'>
         <?php afficherPost(); ?>
-    <div class='comments-container'>
         <?php afficherComments() ?>
-    
-    </div>
     <form action="" method="post" class="form-comments">
         <div class="form-comments">
             <label for="new-comment">Répondre : </label>
             <input type="text" name="comment" id="comment" required />
-        <div class="form-comments">
             <input type="submit" value="Envoyez!" />
         </div>
     </form>
+    </div>
 </body>
 </html>
