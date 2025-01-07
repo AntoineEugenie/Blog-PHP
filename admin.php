@@ -14,7 +14,7 @@
             echo("
                 <tr>
                 <form action=\"editPost.php\" method=\"post\">
-                    <td><input type=\"hidden\" name=\"id\" value=\"$row[ID]\"> </td>
+                    <input type=\"hidden\" name=\"id\" value=\"$row[ID]\">
                     <td><input type=\"text\" name=\"title\" placeholder=\" $row[Title]\" required></td>
                     <td><textarea name=\"content\" placeholder=\"Nouveau contenu\" required>$row[Content]</textarea></td>
                     <td>$row[Author]</td>
