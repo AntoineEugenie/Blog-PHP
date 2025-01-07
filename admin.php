@@ -2,6 +2,9 @@
     require('connectToDB.php');
     session_start();
 
+    if ($_SESSION['role'] !== 'admin') {
+        header('Location: index.php');
+    }
     function afficherPosts(){
         global $con;
         $stmt = $con->prepare('SELECT * FROM posts');
