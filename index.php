@@ -80,6 +80,11 @@ $result = $con->query($sql);
         <button class="musique" onclick="window.location.href='index.php?category=musique'">Musique</button>
     </div>
     <?php
+    if ($showAdminButton) {
+        echo '<a href="admin.php"><button>Admin Dashboard</button></a>';
+    }
+    ?>
+    <?php
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             $categoryClass = strtolower($row["Category"]);
