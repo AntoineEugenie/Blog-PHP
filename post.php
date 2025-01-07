@@ -4,6 +4,8 @@
     
     // Démarre une session
     session_start();
+
+    
         
     // Récupère le nom d'utilisateur de la session
     $username = $_SESSION['username'];
@@ -16,6 +18,13 @@
     
     // Récupère l'ID du post à partir des paramètres GET
     $postId = $_GET['id'];
+
+     // Prépare et exécute la requête pour récupérer le titre du post
+     $stmt = $con->prepare('SELECT Title FROM posts WHERE ID= (?)');
+     $stmt->execute([$postId]);
+     $result = $stmt->get_result();
+     $row = $result->fetch_assoc();
+     $title = $row['Title'];
     
     // Vérifie si la requête est de type POST
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -164,17 +173,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="Dis des trucs" content="width=device-width, initial-scale=1.0">
-    <?php
-        global $con;
-        global $postId;
-        
-        // Prépare et exécute la requête pour récupérer le titre du post
-        $stmt = $con->prepare('SELECT Title FROM posts WHERE ID= (?)');
-        $stmt->execute([$postId]);
-        $result = $stmt->get_result();
-        $row = $result->fetch_assoc();
-        $title = $row['Title'];
-    ?>
     <title>Dis des trucs <?php echo $title; ?></title>
     <link rel="stylesheet" href="styles.css">
     <style>
