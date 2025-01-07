@@ -58,7 +58,7 @@
             echo("
                 <h2> $row[Title] </h2>
                 <div class='content'>  $row[Content] </div>
-                <div> Rédigé par $row[Author] le  $row[Date] à ...  </div>
+                <div> Rédigé par $row[Author] le  $row[Date]</div>
             ");
             // Si l'utilisateur est l'auteur du post, affiche des boutons pour modifier et supprimer le post
             if ($row['Author'] === $username) {
